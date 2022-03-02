@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './Components/employees/employees.component';
 import { EmployeePipePipe } from './SharedModules/employee-pipe.pipe';
-import { NavbarcolourDirectiveDirective } from './customDirectives/navbarcolour-directive.directive';
+import { NavbarcolourDirectiveDirective } from './SharedModules/customDirectives/navbarcolour-directive.directive';
 
 @NgModule({
   declarations: [
