@@ -1,0 +1,17 @@
+<mat-toolbar fxLayout="row" color="primary"  fxLayoutAlign="space-between center"  >
+    <div fxLayout="row"  fxLayoutAlign="space-between center"  >
+      <img src="../assets/EuromonitorLogoCircular.jpg" alt="" style="border-radius: 50%; width: 3vw;">      
+      <a mat-button><mat-icon>home</mat-icon></a>
+      <a mat-button>Requests</a>
+      <a mat-button>View-History</a>
+      <a mat-button>Upload</a>
+    </div>
+    <!-- <div>
+          <h1>helo</h1>
+    </div> -->
+    <div>
+      <a mat-button ><mat-icon >account_circle</mat-icon>Name</a>
+      <a mat-button [routerLink]="['/url']">Url</a>
+    </div>
+  </mat-toolbar>
+  <router-outlet></router-outlet>

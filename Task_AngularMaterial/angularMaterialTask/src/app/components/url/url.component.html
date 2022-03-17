@@ -1,0 +1,44 @@
+
+<div class="container-fluid">
+    
+    
+    <form>
+        <div >
+            <table mat-table [dataSource]="urlData" class="center">
+                <ng-container matColumnDef="id">
+                    <th mat-header-cell *matHeaderCellDef><strong>Id</strong></th>
+                    <td mat-cell *matCellDef="let colData">{{colData.id}} </td>
+                </ng-container>
+                <!-- from -->
+                <ng-container matColumnDef="from">
+                    <th mat-header-cell *matHeaderCellDef>From</th>
+                    <td mat-cell *matCellDef="let colData">{{colData.from}} </td>
+                </ng-container>
+                <!-- to -->
+                <ng-container matColumnDef="to">
+                    <th mat-header-cell *matHeaderCellDef>To</th>
+                    <td mat-cell *matCellDef="let colData">{{colData.to}} </td>
+                </ng-container>
+                <!-- DateCreated -->
+                <ng-container matColumnDef="dateCreated">
+                    <th mat-header-cell *matHeaderCellDef>dateCreated</th>
+                    <td mat-cell *matCellDef="let colData">{{colData.dateCreated | date : 'yyyy-MM-dd'}} </td>
+                </ng-container>
+                <!-- permanentLink -->
+                <ng-container matColumnDef="permanentLink">
+                    <th mat-header-cell *matHeaderCellDef>permanentLink</th>
+                    <td mat-cell *matCellDef="let colData">{{colData.permanentLink ? 'Yes':'No' }} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+                <tr mat-row *matRowDef="let data ;columns:columnsToDisplay"></tr>
+            </table>
+            <div fxLayout="row" fxLayoutAlign="space-between end">
+                <button mat-raised-button color="primary" (click)="dialogPopUp()" style="margin-left: 6%;" ><mat-icon>add_circle_outline</mat-icon></button>
+                <mat-paginator [pageSize]="5" [pageSizeOptions]="[5,7,10]" showFirstLastButtons></mat-paginator>
+            </div>
+
+        </div>
+       
+    </form>
+
+</div>
