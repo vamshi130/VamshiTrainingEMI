@@ -1,0 +1,15 @@
+<mat-toolbar fxLayout="row" class="mat-toolbar mat-primary" *ngIf="_loginService.isAuthenticated"  fxLayoutAlign="space-between center"  >
+    <div >
+      <img src="../assets/EuromonitorLogoCircular.jpg" alt="" style="border-radius: 50%; width: 3vw;">      
+      <a mat-button><mat-icon>home</mat-icon></a>
+      <a mat-button></a>
+      <a mat-button></a>
+      <a mat-button></a>
+    </div>
+
+    <div>
+      <a mat-button ><mat-icon class="mr">account_circle</mat-icon>name</a>
+      <a mat-button (click)="LogOut()"><mat-icon class="mr">logout</mat-icon>LogOut</a>
+    </div>
+  </mat-toolbar>
+<!-- <router-outlet></router-outlet> -->

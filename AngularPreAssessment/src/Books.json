@@ -1,0 +1,118 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "bookName": "Bahuballi 2",
+      "author": "Rajamouli",
+      "availability": "4"
+    },
+    {
+      "id": 2,
+      "bookName": "A Better India",
+      "author": "E.M Foster",
+      "availability": "6"
+    },
+    {
+      "id": 3,
+      "bookName": "Death of a City",
+      "author": "Amrita Pritam",
+      "availability": 5
+    },
+    {
+      "id": 4,
+      "bookName": "A Suitable Boy",
+      "author": "Vikram Seth",
+      "availability": "6"
+    },
+    {
+      "id": 5,
+      "bookName": "The Laugh",
+      "author": "Vamshi",
+      "availability": 5
+    },
+    {
+      "id": 6,
+      "bookName": "The Death",
+      "author": "Vamshi",
+      "availability": 4
+    }
+  ],
+  "employee": [
+    {
+      "id": 1,
+      "userName": "vamshi",
+      "password": "vamshi",
+      "name": "vamshi",
+      "phoneNumber": "8106194137",
+      "role": "admin",
+      "roleId": 1
+    },
+    {
+      "id": 2,
+      "userName": "krishna",
+      "password": "krishna",
+      "name": "krishna",
+      "phoneNumber": "8106194137",
+      "role": "user",
+      "roleId": 1
+    },
+    {
+      "id": 3,
+      "userName": "ravi",
+      "password": "ravi",
+      "name": "ravi",
+      "phoneNumber": "8106194137",
+      "role": "user",
+      "roleId": 1
+    }
+  ],
+  "requestedBooks": [
+    {
+      "id": 2,
+      "BooksRequested": 3,
+      "employeeId": 2
+    },
+    {
+      "employeeId": 3,
+      "BooksRequested": 2,
+      "id": 3
+    }
+  ],
+  "userSavedBooks": [
+    {
+      "author": "Rajamouli",
+      "bookName": "Bahuballi 2",
+      "employeeId": 3,
+      "returnDate": "2022-04-06T13:52:04.428Z",
+      "id": 1
+    },
+    {
+      "author": "Rajamouli",
+      "bookName": "Bahuballi 2",
+      "employeeId": 2,
+      "returnDate": "2022-04-06T14:05:19.758Z",
+      "id": 4
+    },
+    {
+      "author": "Rajamouli",
+      "bookName": "Bahuballi 2",
+      "employeeId": 2,
+      "returnDate": "2022-04-09T16:24:48.918Z",
+      "id": 5
+    },
+    {
+      "author": "Amrita Pritam",
+      "bookName": "Death of a City",
+      "employeeId": 2,
+      "returnDate": "2022-04-24T10:46:53.219Z",
+      "id": 6
+    },
+    {
+      "author": "Vikram Seth",
+      "bookName": "A Suitable Boy",
+      "employeeId": 3,
+      "returnDate": "2022-04-24T10:48:57.313Z",
+      "id": 7
+    }
+  ]
+}
