@@ -1,0 +1,49 @@
+<body>
+<div class="container-fluid" style="background-color: #c4dde7;">
+  <!-- <div class="container-fluid" > -->
+
+  <div class="container">
+        <div fxLayout="row " fxLayoutAlign="space-between center">
+            <button matTooltip="Add Book" type="button" mat-raised-button style="margin-top: 2%;" (click)="dialogAdd()"> <mat-icon>add</mat-icon></button>
+            <div>
+                <input type="text" [(ngModel)]="searchBox"><mat-icon>search</mat-icon>
+            </div>
+
+        </div>
+        <div class="row" >
+               <div class="col-md-3"  *ngFor="let book of books  | booksFilterPipe:searchBox">
+                <mat-card class="example-card"   style="margin-top: 10%;" >
+                    <mat-card-header>
+                      <div mat-card-avatar class="example-header-image"></div>
+                      <mat-card-title>{{book.bookName}}</mat-card-title>
+                      <mat-card-subtitle>{{book.author}}</mat-card-subtitle>
+                    </mat-card-header>
+                    <img mat-card-image src="../../../../assets/books.jpg" alt="Photo of a Shiba Inu">
+                    <mat-card-content>
+                      <p style="font-style: oblique;
+                      font-weight: 100;">
+                        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+                      </p>
+                      <div class="row">
+                         <!-- <div class="col-md-5">
+                             Author :
+                         </div>
+                         <div class="col-md-7">Ravi</div> -->
+                      </div>
+                      <div class="row">
+                        <div class="col-md-5">
+                            <span>Availability :</span>
+                        </div>
+                        <div class="col-md-7">{{book.availability}}</div>
+                     </div>
+                    </mat-card-content>
+                    <mat-card-actions>
+                      <button matTooltip="Edit Book"  mat-raised-button color="primary" (click)="dialogEdit(book)"><mat-icon>edit</mat-icon></button>
+                      <button matTooltip="Delete Book" matTooltipClass="redToolTip" mat-raised-button color="warn" (click)="deleteBook(book)"><mat-icon>delete</mat-icon></button>
+                    </mat-card-actions>
+                  </mat-card>
+               </div>
+        </div>
+    </div>
+</div>
+</body>

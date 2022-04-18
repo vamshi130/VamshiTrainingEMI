@@ -1,0 +1,47 @@
+
+
+<!-- <div class="container">
+    <div style="width: 50vw; margin-top: auto; margin-bottom: auto;">
+      
+    </div>
+</div> -->
+  <!-- {{panelOpenState ? 'open' : 'closed' -->
+
+  <div class="container">
+      <button fxLayout="row" fxLayoutAlign="center end" style="margin-left: auto; margin-top: 2%;" (click)="back()"><mat-icon>arrow_back</mat-icon>back</button>
+      <div >
+        <div fxLayout="row " fxLayoutAlign="center center">
+            <mat-accordion style="margin-top: 14%;">
+                <mat-expansion-panel *ngFor="let book of UserBooks  ">
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                     BookName :
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{book.bookName}}
+                    </mat-panel-description>
+                  </mat-expansion-panel-header>
+
+                  <!-- <p>This is the primary content of the panel.</p> -->
+                  <mat-card class="example-card">
+                    <mat-card-title-group>
+                      <mat-card-title>{{book.author}}</mat-card-title>
+                      <mat-card-subtitle>Return Date: {{ book.returnDate |date}}</mat-card-subtitle>
+                      <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" >
+                    </mat-card-title-group>
+                    <mat-card-content>
+                      {{longText}}
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-raised-button color="primary" >Return</button>
+                        <!-- <button mat-raised-button color="warn"><mat-icon>delete</mat-icon></button> -->
+                      </mat-card-actions>
+                  </mat-card>
+                </mat-expansion-panel>
+              </mat-accordion>
+
+        </div>
+
+      </div>
+
+  </div>

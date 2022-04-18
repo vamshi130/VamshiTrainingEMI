@@ -1,0 +1,40 @@
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="end">
+    <button type="button" (click)="closeDialog()">X</button>
+  </div>
+  <form [formGroup]='reactiveBookData' (ngSubmit)="onSubmit(reactiveBookData.value)">
+    <mat-card-header>
+      <mat-card-title>Add Book</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+
+      <div fxLayout="column" fxLayoutAlign="space-between stretch">
+        <mat-form-field appearance="fill">
+          <mat-label>Book Name</mat-label>
+          <input matInput type="text" formControlName="bookName">
+          <mat-error *ngIf="reactiveBookData.get('bookName')?.invalid && reactiveBookData.get('bookName')?.touched">
+            <span *ngIf="reactiveBookData.get('bookName')?.errors?.['required']">Book Name Required</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Author</mat-label>
+          <input matInput type="text" formControlName="author">
+          <mat-error *ngIf="reactiveBookData.get('author')?.invalid && reactiveBookData.get('author')?.touched">
+            <span *ngIf="reactiveBookData.get('author')?.errors?.['required']">Author Required</span>
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Availability</mat-label>
+          <input matInput type="number" formControlName="availability">
+          <mat-error *ngIf="reactiveBookData.get('availability')?.invalid && reactiveBookData.get('availability')?.touched">
+            <span *ngIf="reactiveBookData.get('availability')?.errors?.['required']">Atleast 1 book required</span>
+          </mat-error>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button type="submit" mat-raised-button color="primary" [disabled]="reactiveBookData.invalid">Submit</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
