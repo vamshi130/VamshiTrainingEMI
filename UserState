@@ -1,0 +1,62 @@
+import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { FilterConstants } from '../constants/filter.constant';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class UserStateService {
+  topics: any;
+
+  constructor() {}
+
+  public appState: { [x: string]: any; hasOwnProperty?: any } = {
+    topicId: '',
+    categoryName: '',
+    dataFrameId: '',
+    dataFrameType: '',
+    geographyData: [],
+    categoryData: [],
+    updatedCategoryData: [],
+    dataTypeData: [],
+    updatedDataTypeData: [],
+    geographyBrandTrendData: [],
+    categoryBrandTrendData: [],
+    dataTypeBrandTrendata: [
+      {
+        count: 1,
+        value: FilterConstants.DEFAULT_DATATYPE[0],
+      },
+    ],
+    unitData: [],
+    updatedUnitData: [],
+    yearsData: [],
+    brandData: [],
+    updatedBrandData: [],
+    companyData: [],
+    updatedCompanyData: [],
+    searchServiceToken: '',
+    brand: [],
+    fullBrandData: [],
+    geographyGoogleTrendData: [],
+    categoryGoogleTrendData: [],
+    googleBrand: [],
+    fullGoogleData: [],
+    nutritionData:[],
+    updatedNutritionData: []
+  };
+  public dataSource = new BehaviorSubject(this.appState);
+
+  public setUserState(data: { [x: string]: any; hasOwnProperty?: any }) {
+    for (const key in data) {
+      if (data.hasOwnProperty(key)) {
+        const element = data[key];
+        this.appState[key] = element;
+      }
+    }
+    this.dataSource.next(data);
+  }
+  public getState(stateName: string | number) {
+    return this.appState[stateName];
+  }
+}
